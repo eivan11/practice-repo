@@ -1,4 +1,5 @@
-file_name = "mbox-short.txt"
+#file_name =insert(" inset one of this file mbox-short.txt or mbox.txt: ")
+file_name ='mbox.txt'
 try:
     file_handel = open(file_name)
 except:
@@ -17,4 +18,12 @@ for file_line in file_handel:
                 dictionari[mail_detail[1]] = 1
             else:
                 dictionari[mail_detail[1]] = dictionari[mail_detail[1]] + 1
-print(dictionari)
+max_value = 0
+mail = list(dictionari.keys())
+for key_of_value in mail:
+    temp_value = dictionari [key_of_value]
+    if temp_value > max_value:
+        max_value = temp_value
+        max_mail = key_of_value
+
+print(max_mail," ", max_value)
